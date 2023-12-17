@@ -1,0 +1,19 @@
+<h1>Ações no sistema</h1>
+
+<mat-table *ngIf="messages.length > 0" [dataSource]="messages" class="mat-elevation-z8">
+  <!-- Dia -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> #</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="message">
+    <mat-header-cell *matHeaderCellDef> Mensagem</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.message }} </mat-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"
+  ></mat-row>
+</mat-table>

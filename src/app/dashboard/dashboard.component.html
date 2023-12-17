@@ -1,0 +1,56 @@
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 24px;
+    color: #B71C1C;
+    margin-bottom: 20px;
+  }
+
+  mat-slide-toggle {
+    margin-bottom: 20px;
+  }
+
+  mat-tab-group {
+    margin-top: 20px;
+  }
+
+  .mat-tab-label {
+    background-color: #D32F2F;
+    color: white;
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .mat-tab-body {
+    background-color: #FFCDD2;
+    padding: 16px;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  app-table-variance,
+  app-line-chart {
+    width: 100%;
+  }
+</style>
+
+<h1>{{ ativo }}</h1>
+
+<mat-slide-toggle (change)="onChange()" [(ngModel)]="updateAutomatically" color="primary">
+  Atualizar automaticamente
+</mat-slide-toggle>
+
+<mat-tab-group>
+  <mat-tab label="Tabela">
+    <app-table-variance [dataSource]="variances"></app-table-variance>
+  </mat-tab>
+  <mat-tab label="Gráfico">
+    <app-line-chart [data]="variances"></app-line-chart>
+  </mat-tab>
+</mat-tab-group>

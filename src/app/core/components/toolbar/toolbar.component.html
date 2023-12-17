@@ -1,0 +1,75 @@
+<mat-toolbar color="primary" class="custom-toolbar">
+  <ng-container>
+    <button
+      *ngFor="let menuItem of menuItems"
+      [matTooltip]="menuItem.toolTipText"
+      [routerLink]="[menuItem.routerLink]"
+      [attr.aria-label]="menuItem.toolTipText"
+      mat-icon-button
+      class="menu-button"
+    >
+      <fa-icon *ngIf="!!menuItem.fasIcon" [icon]="['fas', menuItem.fasIcon]" class="menu-icon"></fa-icon>
+      <mat-icon *ngIf="!!menuItem.matIcon" class="menu-icon">{{ menuItem.matIcon }}</mat-icon>
+    </button>
+  </ng-container>
+
+  <span fxFlex></span>
+
+  <span class="title">{{ title }}</span>
+
+  <style>
+    .custom-toolbar {
+      background-color: #FF0000; /* Vermelho */
+      color: white;
+      height: 64px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .menu-button {
+      margin: 0 8px;
+      transition: background-color 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-icon {
+      font-size: 18px; /* Ajuste o tamanho conforme necessário */
+      color: #FFFFFF;
+      margin-right: 8px;
+    }
+
+    .mat-tooltip {
+      font-size: 14px;
+      background-color: #333;
+      color: #FFF;
+      border-radius: 4px;
+      padding: 8px;
+    }
+
+    .menu-button[disabled] {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .menu-button[disabled] .menu-icon {
+      color: #AAA;
+    }
+
+    .menu-button.active {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</mat-toolbar>

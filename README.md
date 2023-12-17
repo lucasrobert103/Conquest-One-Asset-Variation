@@ -1,24 +1,27 @@
-# Stock Price Variation Web App Documentation
+# Variação de Ativo
 
-Welcome to the documentation for the Stock Price Variation Web App! This web application displays the stock price variation of a chosen asset over the last 30 trading days. It includes a backend API implemented in .NET Core, data storage in a relational database, and a front-end developed using Angular.
+## Sobre
 
-## Repository Links
+Este desafio consiste em consultar a variação do preço de um ativo à sua escolha nos últimos 30 pregões. Você deverá apresentar o percentual de variação de preço de um dia para o outro e o percentual desde o primeiro pregão apresentado.
 
-- [GitHub Repository](https://github.com/lucasrobert103/Conquest-One-Asset-Variation)
-  - This link will take you to the main repository page where you can find the source code, issues, and more.
+## Pré-requisitos
 
-- [README.md](https://github.com/lucasrobert103/Conquest-One-Asset-Variation/blob/main/README.md)
-  - Direct link to the README file for instructions on running the project.
+Certifique-se de ter as seguintes versões instaladas antes de executar a aplicação:
 
-## Table of Contents
+- [Node.js](https://nodejs.org/en/) v16.x
+- [Yarn](https://yarnpkg.com/) v1.22.x
 
-- [Prerequisites](#prerequisites)
-- [Setup](#setup)
-- [Backend](#backend)
-  - [Database Setup](#database-setup)
-  - [API Configuration](#api-configuration)
-- [Frontend](#frontend)
-- [Running the Application](#running-the-application)
-- [Additional Notes](#additional-notes)
-- [Contributing](#contributing)
-- [License](#license)
+> **_NOTA:_** Recomendamos o uso do Node Version Manager (NVM). [Clique aqui para mais informações](https://github.com/nvm-sh/nvm)
+
+## Configuração
+
+Execute o seguinte comando para instalar o Angular CLI globalmente:
+$ yarn install / npm i
+
+em caso de erro npm i --force
+
+$ ng serve / yarn start / npm start
+
+$ yarn test / ng test
+
+
